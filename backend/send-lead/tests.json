@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Отправка заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 (960) 900-30-20",
+        "message": "Интересует размещение рекламы"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "name": "Валидация — пустые поля",
+      "method": "POST",
+      "path": "/",
+      "body": { "name": "", "phone": "" },
+      "expectedStatus": 400
+    }
+  ]
+}
